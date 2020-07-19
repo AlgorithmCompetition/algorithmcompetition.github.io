@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contest details :: Algorithm Competition</title>
+    <link rel="canonical" href="http://algorithmcompetition.github.io/doc/contest/rules.html">
+    <meta name="generator" content="Antora 2.3.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="http://algorithmcompetition.github.io">Algorithm Competition</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="/">Documentation</a>
+        <a class="navbar-item" href="https://github.com/PulledPork0/AlgoCompetition">Github Project</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/PulledPork0/AlgoCompetition/archive/master.zip">Download as ZIP</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="doc" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="overview.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="quickstart.html">Quick Start</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="programming-details.html">Programming Details</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="algebra-results.html">Some Useful Algebra Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="skim-math.html">Skim Some Deeper Math</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="motivation.html">Motivation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="references.html">References</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="rules.html">Contest Rules (and registration details)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore" style="display: none;">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="overview.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="overview.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="overview.html">Documentation</a></li>
+    <li><a href="rules.html">Contest Rules (and registration details)</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Contest details</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This contest is related to previous challenges from Chia Networks, but this
+contest is not run by nor affiliated with them. It is merely being setup by a
+fan of the math puzzle embedded in those contests.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contest_rules"><a class="anchor" href="#_contest_rules"></a>Contest Rules</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Anyone may enter (explicitly including Chia employees), and winner(s) will be awarded prizes pledged by community donors.</p>
+</li>
+<li>
+<p>Contest period for entries ends on August 31th, 2020 at 00:00 UTC.</p>
+</li>
+<li>
+<p>Participants must:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Provide a publicly accessible git repo, which must contain:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>a python file: <code>entry.py</code>&#8201;&#8212;&#8201;contains code of your algorithm which is compatible with testing by <code>run_trial.py</code></p>
+</li>
+<li>
+<p>explanation of the algorithm should be supplied (either as comments in the code, or a separate document included in the git repo)</p>
+</li>
+<li>
+<p>a text file: <code>prize.txt</code>&#8201;&#8212;&#8201;cryptocoin address(es) where prizes should be sent</p>
+</li>
+<li>
+<p>a <code>LICENSE</code> file, placing all source code and documentation in a submission related to the contest into the public domain, or released with an MIT or Apache 2.0 License.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Register an entry before the contest period ends by submitting a pull
+request to the contest github repo <a href="https://github.com/PulledPork0/AlgoCompetition" class="bare">https://github.com/PulledPork0/AlgoCompetition</a> which adds the following information
+to <code>entry_registration.txt</code>:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>the git hash of the commit of your git repo to be considered for the contest entry</p>
+</li>
+<li>
+<p>publicly accessible url from which the git repository can be cloned after the contest period ends</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>[Optional] a contest entry can be registered without releasing your algorithm details until the contest period ends.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Register as normal, but keep your git repo private, or just not pushed to the public server, until the contest period ends</p>
+</li>
+<li>
+<p>In this case, the repo should be made public within a day of the contest period ending.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Tied scores will be resolved by whoever submitted first.</p>
+</li>
+<li>
+<p>An entry that calculates an incorrect answer during testing will be disqualified.</p>
+</li>
+<li>
+<p>An entry should out perform the provided example entries to be eligible for a prize.</p>
+</li>
+<li>
+<p>To resolve disputes, the person pledging a prize has final say on that prize.
+What follows are suggestions for handling some situations:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Entries which are found to evade or directly manipulate the computation cost tracking will be invalidated.</p>
+</li>
+<li>
+<p>If there are prizes for 2nd place or below, then duplicate entries or entries deemed as "substantially duplicate" of other entries will be invalidated except for the one submitted first.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Participants may discuss, share, and collaborate on ideas however they choose.</p>
+</li>
+<li>
+<p>Contest test values will be generated by running</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ ./create_test_file.py -s "$SECRET_SEED" -n 100 -b 2048 contest.txt</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Contest test seed <code>$SECRET_SEED</code> is precommitted by</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ echo "$SECRET_SEED" | sha256sum
+efa47bb2d9c31d41c921c9102a1dc2d13a007e180bdce336152de8769b98e31b  -</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Contest entries will be scored by running (lowest total cost wins)</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ ./run_trial.py -t contest.txt entry</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_current_prize_pledges"><a class="anchor" href="#_current_prize_pledges"></a>Current prize pledges</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>user "PulledPork" pledges 2 ETH for first place, and I will not enter the contest for added fairness</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you would like to add to the community prize pool, please contact me on
+keybase chat with the details and I&#8217;ll add them here.</p>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

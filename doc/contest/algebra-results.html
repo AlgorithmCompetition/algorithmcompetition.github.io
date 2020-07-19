@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Some useful algebra results :: Algorithm Competition</title>
+    <link rel="canonical" href="http://algorithmcompetition.github.io/doc/contest/algebra-results.html">
+    <meta name="generator" content="Antora 2.3.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="http://algorithmcompetition.github.io">Algorithm Competition</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="/">Documentation</a>
+        <a class="navbar-item" href="https://github.com/PulledPork0/AlgoCompetition">Github Project</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/PulledPork0/AlgoCompetition/archive/master.zip">Download as ZIP</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="doc" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="overview.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="quickstart.html">Quick Start</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="programming-details.html">Programming Details</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="algebra-results.html">Some Useful Algebra Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="skim-math.html">Skim Some Deeper Math</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="motivation.html">Motivation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="references.html">References</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rules.html">Contest Rules (and registration details)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore" style="display: none;">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="overview.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="overview.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="overview.html">Documentation</a></li>
+    <li><a href="algebra-results.html">Some Useful Algebra Results</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Some useful algebra results</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starting with the original 9 cube equations, for some purposes it is
+convenient to expand them into the following 12 equations.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  bc - ad = A1
+  ce - ag = A2
+  be - af = A3
+  cf - ah = (B1 + B2)/2
+  bg - de = (B1 - B2)/2
+  bg - ah = (B1 + B3)/2
+  cf - de = (B1 - B3)/2
+  de - ah = (B2 + B3)/2
+  cf - bg = (B2 - B3)/2
+  fg - eh = C1
+  df - bh = C2
+  dg - ch = C3</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_equations_linear_in_the_cube_values"><a class="anchor" href="#_equations_linear_in_the_cube_values"></a>Equations linear in the cube values</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The above 12 equations can then be manipulated to form relationships that
+are linear in the cube values. As they are derived from the cube equations,
+they must hold for any cube solution.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  a C3 + g A1 = c (B1 + B3)/2
+  a C1 + g A3 = e (B1 + B3)/2
+  b C3 + h A1 = d (B1 + B3)/2
+  b C1 + h A3 = f (B1 + B3)/2
+
+  e A1 - c A3 = a (B1 - B3)/2
+  f A1 - d A3 = b (B1 - B3)/2
+  c C1 - e C3 = g (B1 - B3)/2
+  d C1 - f C3 = h (B1 - B3)/2
+
+  e A1 - b A2 = a (B1 - B2)/2
+  g A1 - d A2 = c (B1 - B2)/2
+  b C1 - e C2 = f (B1 - B2)/2
+  d C1 - g C2 = h (B1 - B2)/2
+
+  a C2 + f A1 = b (B1 + B2)/2
+  c C2 + h A1 = d (B1 + B2)/2
+  a C1 + f A2 = e (B1 + B2)/2
+  c C1 + h A2 = g (B1 + B2)/2
+
+  b A2 - c A3 = a (B2 - B3)/2
+  f A2 - g A3 = e (B2 - B3)/2
+  c C2 - b C3 = d (B2 - B3)/2
+  g C2 - f C3 = h (B2 - B3)/2
+
+  d A3 + a C2 = b (B3 + B2)/2
+  a C3 + d A2 = c (B3 + B2)/2
+  h A3 + e C2 = f (B3 + B2)/2
+  e C3 + h A2 = g (B3 + B2)/2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If given values for the tuples (A1,B1,C1), (A2,B2,C2), (A3,B3,C3), this is now
+a system of linear equations for the cube values. Of the 24 linear equations,
+only 6 are linearly independent, so the 8 cube values can be solved with 2
+freedoms remaining.</p>
+</div>
+<div class="paragraph">
+<p>These freedoms are just from the linear equations not specifying all of the
+original constraints. For example it is clear setting all the cube values to
+zero would satisfy the linear equations, but not the original equations.</p>
+</div>
+<div class="paragraph">
+<p>So choosing some non-zero tuple value, the original quadratic equation
+can be used to constrain the final 2 freedoms (this constraint looks like
+a quadratic form equal to a constant). Therefore this gives a unique solution
+up to an overall sign.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_properties_of_solutions_to_the_cube_equations"><a class="anchor" href="#_properties_of_solutions_to_the_cube_equations"></a>Properties of solutions to the cube equations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The cube equations have some interesting properties.</p>
+</div>
+<div class="sect2">
+<h3 id="_new_solution_with_overall_sign_flip"><a class="anchor" href="#_new_solution_with_overall_sign_flip"></a>New solution with overall sign flip</h3>
+<div class="paragraph">
+<p>Since all the tuple values A1,A2,etc. are a sum of terms "quadratic" in the
+cube values, if we change the sign of all the cube values we get another cube
+solution with the same tuple values.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_equivalence_transformations"><a class="anchor" href="#_equivalence_transformations"></a>Equivalence Transformations</h3>
+<div class="paragraph">
+<p>Given a cube, there are some simple transformations we can do to the values
+which preserves two of the three tuples, and changes the third in a simple way.</p>
+</div>
+<div class="paragraph">
+<p>In particular for this subsection, we will look at transformations which
+preserve  Tuple1,Tuple2 and only change Tuple3. Given a cube, any new tuple we
+can obtain this way for Tuple3 is said to be "equivalent" to the original
+Tuple3. The full set of forms related in this way is called an "equivalence
+class".</p>
+</div>
+<div class="paragraph">
+<p>Here is an example transformation that preserves Tuple1, and Tuple2, but
+changes Tuple3 in a simple way.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>swap the values according to
+    (a',b',c',d', e',f',g',h') = (c,d,-a,-b, g,h,-e,-f)
+
+A1' = b' c' - a' d' = d (-a) - c (-b) = bc - ad = A1
+A2' = c' e' - a' g' = (-a) g - c (-e) = ce - ag = A2
+A3' = b' e' - a' f' = d g - c h = C3
+and so on...
+
+it is found that
+    A1',B1',C1' = A1,B1,C1
+    A2',B2',C2' = A2,B2,C2
+    A3',B3',C3' = C3,-B3,A3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>another operation preserving Tuple1,Tuple2 and changing Tuple3 is</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>given any integer n
+    (a',b',c',d', e',f',g',h') = (a,b,c+an,d+bn, e,f,g+en,h+fn)
+
+C1' = f' g' - e' h' = f (g+en) - e (h+fn) = fg - eh = C1
+C2' = d' f' - b' h' = (d+bn) f - b (h+fn) = df - bh = C2
+C3' = d' g' - c' h' = (d+bn)(g+en) - (c+an)(h+fn)
+                    = (dg-ch) + n(-ah + bg - cf + de) + n^2(be - af)
+                    = C3 + n B3 + n^2 A3
+and so on...
+
+it is found that
+    A1',B1',C1' = A1,B1,C1
+    A2',B2',C2' = A2,B2,C2
+    A3',B3',C3' = A3, B3 + 2n A3, C3 + n B3 + n^2 A3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The previous two manipulations can be rephrased nicely in the language
+of linear algebra</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>first
+    |a' b' e' f'| = | 0 1| |a b e f|
+    |c' d' g' h'|   |-1 0| |c d g h|
+
+    | A3'  B3'/2| = | 0 1| | A3  B3/2| |0 -1|
+    |B3'/2  C3' |   |-1 0| |B3/2  C3 | |1  0|
+
+
+second
+    |a' b' e' f'| = |1 0| |a b e f|
+    |c' d' g' h'|   |n 1| |c d g h|
+
+    | A3'  B3'/2| = |1 0| | A3  B3/2| |1 n|
+    |B3'/2  C3' |   |n 1| |B3/2  C3 | |0 1|</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These two manipulations can be combined, and repeated, leading to the following
+general case</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>modify with any matrix such that ru - st = 1
+    |a' b' e' f'| = |r s| |a b e f|
+    |c' d' g' h'|   |t u| |c d g h|
+
+    | A3'  B3'/2| = |r s| | A3  B3/2| |r t|
+    |B3'/2  C3' |   |t u| |B3/2  C3 | |s u|</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This freedom in the tuple is precisely the freedom in the
+equivalance relation mentioned above.</p>
+</div>
+<div class="paragraph">
+<p>A routine to do a general matrix transformation on the cube like this
+is provided in the algocomp library: <code>transform_cube(cube, r,s,t,u)</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_preserving_tuple1tuple3_or_tuple2tuple3"><a class="anchor" href="#_preserving_tuple1tuple3_or_tuple2tuple3"></a>Preserving Tuple1,Tuple3 or Tuple2,Tuple3</h3>
+<div class="paragraph">
+<p>By symmetry of the cube and equations, similar manipulations can be
+done which only change Tuple2 or only change Tuple1.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_algebra_details_specific_to_the_case_of_interest"><a class="anchor" href="#_algebra_details_specific_to_the_case_of_interest"></a>Algebra details specific to the case of interest</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From the constraint the discriminant is negative a prime number p, and the
+following constraint for any cube solution:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    B1^2 - 4 A1 C1 = B2^2 - 4 A2 C2 = B3^2 - 4 A3 C3 = - p</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can see that no tuple value can be zero, as that would require p to have
+a non-trivial factor.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, we can see that gcd(B1,A1) = gcd(B1,C1) = 1, and likewise for the
+other two forms.</p>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

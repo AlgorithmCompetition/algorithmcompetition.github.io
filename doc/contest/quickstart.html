@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quick start :: Algorithm Competition</title>
+    <link rel="canonical" href="http://algorithmcompetition.github.io/doc/contest/quickstart.html">
+    <meta name="generator" content="Antora 2.3.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="http://algorithmcompetition.github.io">Algorithm Competition</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="/">Documentation</a>
+        <a class="navbar-item" href="https://github.com/PulledPork0/AlgoCompetition">Github Project</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/PulledPork0/AlgoCompetition/archive/master.zip">Download as ZIP</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="doc" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="overview.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="overview.html">Overview</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="quickstart.html">Quick Start</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="programming-details.html">Programming Details</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="algebra-results.html">Some Useful Algebra Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="skim-math.html">Skim Some Deeper Math</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="motivation.html">Motivation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="references.html">References</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rules.html">Contest Rules (and registration details)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore" style="display: none;">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="overview.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="overview.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="overview.html">Documentation</a></li>
+    <li><a href="quickstart.html">Quick Start</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Quick start</h1>
+<div class="paragraph">
+<p>The code for the contest can be obtained from the
+<a href="https://github.com/PulledPork0/AlgoCompetition">Github project page</a></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ git clone https://github.com/PulledPork0/AlgoCompetition.git</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The supplied <code>run_trial.py</code> is the scoring program, and you can test it
+out on one of the supplied examples: <code>example.py</code></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ./run_trial.py example</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If all the tests pass, the calculated score is listed on the
+line <code>total cost</code>, which is followed by
+a breakdown of where the computational cost is ocurring</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>total cost: 5356404348 (5.36e+09)
+basic operation counts:
+    add:2.73e+05, sub:1.22e+06, mul:1.01e+06, div:4.11e+05
+basic operation costs:
+    add:1.48e+07, sub:6.57e+07, mul:8.68e+08, div:4.41e+09
+routine counts:
+    gcd:1.00e+04, reduce_form:1.00e+04
+routine costs (percent of total):
+    gcd:1.25e+09 (23.4%), reduce_form:3.51e+09 (65.6%)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check out <code>example.py</code> and <code>example2.py</code> for two example solutions.</p>
+</div>
+<div class="paragraph">
+<p>Contest registration and submissions will be handled using git repositories.
+So once you have a working solution, follow the directions in
+<a href="rules.html" class="page">'Contest Rules'</a>
+to register and submit your entry.</p>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

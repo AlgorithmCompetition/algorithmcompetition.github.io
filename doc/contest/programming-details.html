@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Programming details :: Algorithm Competition</title>
+    <link rel="canonical" href="http://algorithmcompetition.github.io/doc/contest/programming-details.html">
+    <meta name="generator" content="Antora 2.3.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="http://algorithmcompetition.github.io">Algorithm Competition</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="/">Documentation</a>
+        <a class="navbar-item" href="https://github.com/PulledPork0/AlgoCompetition">Github Project</a>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://github.com/PulledPork0/AlgoCompetition/archive/master.zip">Download as ZIP</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="doc" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="overview.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="quickstart.html">Quick Start</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="programming-details.html">Programming Details</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="algebra-results.html">Some Useful Algebra Results</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="skim-math.html">Skim Some Deeper Math</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="motivation.html">Motivation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="references.html">References</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rules.html">Contest Rules (and registration details)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore" style="display: none;">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="overview.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="overview.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="overview.html">Documentation</a></li>
+    <li><a href="programming-details.html">Programming Details</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Programming details</h1>
+<div class="sect1">
+<h2 id="_user_supplied_algorithm"><a class="anchor" href="#_user_supplied_algorithm"></a>User supplied algorithm</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A algorithm entry must define:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a function <code>run(cube, info)</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>parameter cube: will be a tuple of 8 integers (or integer like objects)
+representing a,b,c,d,e,f,g,h in the cube equations.</p>
+</li>
+<li>
+<p>parameter info: the info object created by the setup routine</p>
+</li>
+<li>
+<p>returns new_cube: a new tuple of 8 integer values which meet the algebraic
+constraints of the algorithm which were described earlier.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An algorithm entry may optionally define:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a function <code>setup(discriminant)</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>parameter discriminant: an integer (or integer like object)</p>
+</li>
+<li>
+<p>should return (cube, info)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>cube: the initial cube constructed so (A1,B1,C1) = (A2,B2,C2) = (2, 1, (1-disc)//8)</p>
+</li>
+<li>
+<p>info: any object you wish which will be passed onto 'run' for convenience.
+Its intended purpose is to hold values that only need to be calculated once at
+startup, or to pass possibly useful internal values from a run calculation to
+the next step.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If no setup function is supplied a default setup routine will be run during
+tesing. The default setup creates the initial cube for you, and info is just
+an empty dictionary object that 'run' can shove internal values into if it
+wants.</p>
+</div>
+<div class="paragraph">
+<p>It is strongly recommended to take a look at the supplied
+<code>example.py</code> and <code>example2.py</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contents_of_this_repo"><a class="anchor" href="#_contents_of_this_repo"></a>Contents of this repo</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>run_trial.py -- Used to test an algorithm entry.
+                Run without arguments to see the options.
+
+example.py -- example algorithm, which just supplies a run function
+example2.py -- example algorithm, which also supplies a custom setup function
+               for caching some calculated values for reuse
+
+test16.txt -- a small test file with bitsize=16,
+              useful for quickly verifying an algorithm is working
+
+test128.txt -- a longer test files with bitsize=128
+test2048.txt -- a test file with bitsize=2048
+
+create_test_file.py -- Used to create new test sets with pre-computed answers.
+                       Run without arguments to see the options.
+
+algocomp/  -- contest library
+inkfish/   -- library used create_test_file, not needed for user entries
+site-docs/ -- antora + asciidoc files for this documentation</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_provided_code_and_contest_library"><a class="anchor" href="#_provided_code_and_contest_library"></a>Provided code and contest library</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The algocomp library defines a class TrackedNumber which for the most part
+can be treated like an integer. This handles cost tracking of operations
+behind the scenes. Ideally, the user never needs to deal with this directly or
+even be aware which variables are actually integers vs. TrackedNumbers.</p>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations"><a class="anchor" href="#_supported_operations"></a>Supported operations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>unary: <code>+</code>, <code>-</code>, <code>abs()</code></p>
+</li>
+<li>
+<p>bool tests: <code>bool()</code>, <code>==</code>, <code>&gt;=</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&lt;</code>, <code>!=</code></p>
+</li>
+<li>
+<p>basic arithmetic: <code>+</code>, <code>-</code>, <code>*</code>, <code>%</code>, <code>divmod</code>, <code>//</code> (integer floor division)</p>
+</li>
+<li>
+<p>power: <code>**</code> (however, as this needs to do extra checks, it is recommended things like <code>x**2</code> are just written explicitly as <code>x*x</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_list_of_do_nots"><a class="anchor" href="#_a_list_of_do_nots"></a>A list of "Do Nots"</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Do not use assignment operators. Instead of writing "a += b" explicitly
+write it out as "a = a + b". This is necessary to allow promotion of ints
+to tracked values for cost tracking. It also prevents aliasing issues.</p>
+</li>
+<li>
+<p>Do not use <code>/</code> for division. Instead use <code>//</code>, or if you want to denote the
+division should be exact, use <code>exact_div</code>. The <code>/</code> division creates floats
+from integers even if the division is exact.</p>
+</li>
+<li>
+<p>Do not use bit manipulations. Instead strive to do as much possible with
+the basic arithmetic operations and the provided library routines. Bit
+manipulation operators were not defined for the tracked values to strongly
+encourage this.</p>
+</li>
+<li>
+<p>Do not try to cast an expression or value using int(). This implies you
+expect an intermediate value in some calculation to be a float, which when
+working with large ints means a lot of precision was just lost. So this is
+an indicator of something going wrong. Furthermore, allowing this would also
+strip any cost tracking from a value, so this was explicitly not included
+as a supported operation, to prevent anyone from accidentally doing this.</p>
+</li>
+<li>
+<p>Do not try to extract the internal int value from a tracked object, or
+directly manipulate the int value inside a tracked object. This would
+evade cost tracking.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>one exception is when you want to do a sanity check assert with a small
+calculation. You can import</p>
+<div class="literalblock">
+<div class="content">
+<pre>from algocomp.tracked_number.coerce_int as coerce_int</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and then use coerce_int to strip values down to an int to avoid the cost
+tracking in an assert.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integer_math_routines"><a class="anchor" href="#_integer_math_routines"></a>Integer math routines</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>isqrt(x)</code>&#8201;&#8212;&#8201;integer square root, returns the square-root of <code>x</code> rounded down to nearest integer</p>
+</li>
+<li>
+<p><code>exact_div(a,b)</code>&#8201;&#8212;&#8201;division, but raises exception if <code>a</code> is not divisible by <code>b</code></p>
+</li>
+<li>
+<p><code>divmod_min(a,b)</code>&#8201;&#8212;&#8201;returns <code>q,r</code> such that <code>a = q*b + r</code>, with minimum <code>|r|</code></p>
+</li>
+<li>
+<p><code>mod_min(a,b)</code>&#8201;&#8212;&#8201;returns <code>r</code> such that <code>r = a (mod b)</code>, with minimum <code>|r|</code></p>
+</li>
+<li>
+<p><code>gcd(a,b)</code>&#8201;&#8212;&#8201;returns the greatest common divisor of <code>a</code> and <code>b</code></p>
+</li>
+<li>
+<p><code>xgcd(a,b)</code>&#8201;&#8212;&#8201;returns <code>(g,x,y)</code> such that <code>a*x + b*y = g = gcd(a,b)</code></p>
+</li>
+<li>
+<p><code>mod_inverse(x,M)</code>&#8201;&#8212;&#8201;returns <code>a</code> such that <code>a*x = 1 (mod M)</code>.</p>
+</li>
+<li>
+<p><code>partial_xgcd(a,b,L)</code>&#8201;&#8212;&#8201;returns <code>(u,x,v,y)</code> such that</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>u*x + v*y = a</code>,   with <code>|v| &lt;= L</code> or <code>u = 0</code></p>
+</li>
+<li>
+<p>there exists a matrix <code>M</code> such that <code>[u v] = [a b] M</code>, with <code>det(M) = 1</code></p>
+</li>
+<li>
+<p><code>gcd(u,v) = gcd(a,b)</code></p>
+</li>
+<li>
+<p><code>gcd(x,y) = 1</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>solve_linear(a,b,c)</code>&#8201;&#8212;&#8201;returns <code>(x,y)</code> such that <code>a*x + b*y = c</code>, with <code>|x|</code> minimized</p>
+</li>
+<li>
+<p><code>solve_linear_x(a,b,c)</code>&#8201;&#8212;&#8201;like <code>solve_linear</code> but only calculates the <code>x</code> value</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_binary_quadratic_form_routines"><a class="anchor" href="#_binary_quadratic_form_routines"></a>Binary quadratic form routines</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>reduce_form(a,b,c)</code>&#8201;&#8212;&#8201;returns the reduced form equivalent to (a,b,c)</p>
+</li>
+<li>
+<p><code>nudupl(a,b,c,L=None)</code>&#8201;&#8212;&#8201;returns a reduced form (A,B,C) that
+is the squared composite form of (a,b,c), the parameter L is a
+tuning parameter for partial reduction based on the discriminant
+(if not supplied, it is calculated from a,b,c).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cube_routines"><a class="anchor" href="#_cube_routines"></a>Cube routines</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>a cube is passed as a tuple of 8 values</p>
+</li>
+<li>
+<p><code>transform_cube(cube, r,s,t,u)</code>&#8201;&#8212;&#8201;applies a matrix transformation to a cube,
+which preserves (A1,B1,C1) and (A2,B2,C2), but does an equivalence
+transformation on (A3,B3,C3)</p>
+</li>
+<li>
+<p><code>print_cube_stats(cube)</code>&#8201;&#8212;&#8201;debug print details about cube values and forms</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cost_calculations"><a class="anchor" href="#_cost_calculations"></a>Cost calculations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The actual cost values have no explicit meaning.</p>
+</div>
+<div class="paragraph">
+<p>Costs were assigned to the basic arithmetic operations, and then the cost of
+all other routines are determined based on use of these operations.</p>
+</div>
+<div class="paragraph">
+<p>The intention was to make the cost of <code>div &gt; mul &gt; add,sub</code> in such a way that
+there are no silly/hacky incentives to unroll muls into a huge loop of adds,
+or divs as subtracts, etc.
+The ultimate goal is to have the relative costs reasonable enough that people
+write the algorithms naturally, and then for them to be essentially ranked
+by the usage of (div, mul, add+sub).</p>
+</div>
+<div class="paragraph">
+<p>Constants in the code are still just ordinary ints, and are promoted to cost
+tracked numbers when an operation involves them with a cost tracked variable.
+This is a necessity due to how it was decided to handle cost tracking.
+Furthermore, most constants in the algorithms will just be small, such
+as 0, 1, 2, or 4. And the costs only remain untracked while they operate with
+other ints.</p>
+</div>
+<div class="paragraph">
+<p>Some details:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>arithmetic operations cost more with larger operands</p>
+</li>
+<li>
+<p>all unary operations such as negation <code>-</code> or <code>abs()</code> or <code>bool()</code> are free (as the usual way of storing large integers makes manipulating the sign, or checking if non-zero, really cheap)</p>
+</li>
+<li>
+<p>boolean compares are free (unless something is causing large values to have almost identical values, compares of large integers should still be fast)</p>
+</li>
+<li>
+<p>with the same operands <code>+</code>, and <code>-</code> have the same cost</p>
+</li>
+<li>
+<p>with the same operands <code>//</code>, <code>%</code>, and <code>divmod</code> are all considered a single
+division and all have the same cost. So if you need both the quotient and
+remainder, use divmod, that is what it is there for.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="5">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
